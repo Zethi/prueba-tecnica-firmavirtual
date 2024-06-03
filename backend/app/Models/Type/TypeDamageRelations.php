@@ -8,17 +8,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class TypeDamageRelations extends Model
 {
     public $timestamps = false;
-
     protected $hidden = ['id', 'from_type_id', 'damage_relation_type_id', 'to_type_id'];
-
-
     protected $fillable = [
         'from_type_id',
         'damage_relation_type_id',
         'to_type_id',
     ];
 
-    public function FromTypeClass(): BelongsTo
+    public function fromType(): BelongsTo
     {
         return $this->belongsTo(Type::class, 'from_type_id');
     }
