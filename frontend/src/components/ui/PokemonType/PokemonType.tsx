@@ -1,5 +1,5 @@
-import { PokemonTypeColorsDictionary } from "@/types/dictionarys/PokemonTypeColorsDictionary";
-import { TypeEnum } from "@/types/enums/backend/pokemon/TypeEnum";
+import { PokemonTypeColorsDictionary } from "../../../types/dictionarys/PokemonTypeColorsDictionary";
+import { TypeEnum } from "../../../types/enums/backend/pokemon/TypeEnum";
 
 interface Props {
     pokemonType: TypeEnum;

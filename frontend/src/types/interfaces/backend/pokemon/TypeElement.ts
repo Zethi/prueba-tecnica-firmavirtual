@@ -1,4 +1,4 @@
-import { TypeEnum } from "@/types/enums/backend/pokemon/TypeEnum";
+import { TypeEnum } from "../../../../types/enums/backend/pokemon/TypeEnum";
 import { DamageRelation } from "./DamageRelation";
 
 export interface TypeElement {

@@ -1,10 +1,10 @@
-import { FiltersDropdown } from "@/components/ui/Filters/FiltersDropDown";
-import { SearchInput } from "@/components/ui/TextInput/SearchInput";
-import { useDependency } from "@/hooks/useDependency";
-import { TypeEnum } from "@/types/enums/backend/pokemon/TypeEnum";
-import { Filters } from "@/types/interfaces/backend/filters/PokemonFilters";
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
-import { IPokemonService } from "@/types/interfaces/services/IPokemonServices";
+import { FiltersDropdown } from "../../../components/ui/Filters/FiltersDropDown";
+import { SearchInput } from "../../../components/ui/TextInput/SearchInput";
+import { useDependency } from "../../../hooks/useDependency";
+import { TypeEnum } from "../../../types/enums/backend/pokemon/TypeEnum";
+import { Filters } from "../../../types/interfaces/backend/filters/PokemonFilters";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
+import { IPokemonService } from "../../../types/interfaces/services/IPokemonServices";
 import { useState } from "react";
 
 interface Props {

@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
-import { addLeadingZeros, capitalizeFirstLetter } from "@/utils/StringUtils";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
+import { addLeadingZeros, capitalizeFirstLetter } from "../../../utils/StringUtils";
 import { useState } from "react";
 import PokemonType from "../PokemonType/PokemonType";
 

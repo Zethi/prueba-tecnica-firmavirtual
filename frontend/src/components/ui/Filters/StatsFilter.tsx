@@ -1,7 +1,7 @@
-import { OrderByEnum } from "@/types/enums/backend/filters/OrderByEnum";
-import { StatTypesEnum } from "@/types/enums/backend/pokemon/StatTypesEnum";
-import { Filters } from "@/types/interfaces/backend/filters/PokemonFilters";
-import { StatFilter } from "@/types/interfaces/backend/filters/SortStat";
+import { OrderByEnum } from "../../../types/enums/backend/filters/OrderByEnum";
+import { StatTypesEnum } from "../../../types/enums/backend/pokemon/StatTypesEnum";
+import { Filters } from "../../../types/interfaces/backend/filters/PokemonFilters";
+import { StatFilter } from "../../../types/interfaces/backend/filters/SortStat";
 
 interface Props {
     filters: Filters;

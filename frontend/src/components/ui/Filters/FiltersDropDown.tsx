@@ -1,12 +1,12 @@
-import { Filters } from "@/types/interfaces/backend/filters/PokemonFilters";
+import { Filters } from "../../../types/interfaces/backend/filters/PokemonFilters";
 import { DropDown } from "../Dropdown/Dropdown";
 import { TypesFilter } from "./TypesFilter";
-import { TypeEnum } from "@/types/enums/backend/pokemon/TypeEnum";
+import { TypeEnum } from "../../../types/enums/backend/pokemon/TypeEnum";
 import PokemonType from "../PokemonType/PokemonType";
-import { StatTypesEnum } from "@/types/enums/backend/pokemon/StatTypesEnum";
+import { StatTypesEnum } from "../../../types/enums/backend/pokemon/StatTypesEnum";
 import { StatsFilter } from "./StatsFilter";
-import { PokemonStatNamesDictionary } from "@/types/dictionarys/PokemonStatNamesDictionary";
-import { FieldTypesEnum } from "@/types/enums/backend/filters/FieldTypesEnum";
+import { PokemonStatNamesDictionary } from "../../../types/dictionarys/PokemonStatNamesDictionary";
+import { FieldTypesEnum } from "../../../types/enums/backend/filters/FieldTypesEnum";
 import { FieldsFilter } from "./FieldsFilter";
 
 interface Props {

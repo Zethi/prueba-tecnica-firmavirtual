@@ -1,6 +1,6 @@
-import PokemonList from "@/components/ui/PokemonList/PokemonList";
-import Loader from "@/components/ui/utils/Loader";
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
+import PokemonList from "../../../components/ui/PokemonList/PokemonList";
+import Loader from "../../../components/ui/utils/Loader";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
 
 interface Props {
     pokemons: Pokemon[]

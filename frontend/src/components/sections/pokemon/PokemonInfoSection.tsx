@@ -1,8 +1,8 @@
-import PokemonInfoStatTable from "@/components/ui/PokemonInfo/PokemonInfoStatTable";
-import PokemonInfoTable from "@/components/ui/PokemonInfo/PokemonInfoTable";
-import { PokemonMoveList } from "@/components/ui/PokemonMove/PokemonMoveList";
-import PokemonSelector from "@/components/ui/PokemonSelector/PokemonSelector";
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
+import PokemonInfoStatTable from "../../../components/ui/PokemonInfo/PokemonInfoStatTable";
+import PokemonInfoTable from "../../../components/ui/PokemonInfo/PokemonInfoTable";
+import { PokemonMoveList } from "../../../components/ui/PokemonMove/PokemonMoveList";
+import PokemonSelector from "../../../components/ui/PokemonSelector/PokemonSelector";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
 
 interface Props {
     pokemon: Pokemon

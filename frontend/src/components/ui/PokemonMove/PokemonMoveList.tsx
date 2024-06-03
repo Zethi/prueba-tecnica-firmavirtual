@@ -1,5 +1,5 @@
 import { PokemonMove } from "./PokemonMove";
-import { MovesElement } from "@/types/interfaces/backend/pokemon/Pokemon";
+import { MovesElement } from "../../../types/interfaces/backend/pokemon/Pokemon";
 
 
 interface Props {

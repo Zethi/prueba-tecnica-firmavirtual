@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { mainFont } from "./fonts";
-import { DependencyProvider } from "@/hooks/useDependency";
+import { DependencyProvider } from "../hooks/useDependency";
 
 
 export const metadata: Metadata = {

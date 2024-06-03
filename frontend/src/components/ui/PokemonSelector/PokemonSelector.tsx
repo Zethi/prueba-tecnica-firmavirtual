@@ -1,5 +1,5 @@
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
-import { capitalizeFirstLetter } from "@/utils/StringUtils";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
+import { capitalizeFirstLetter } from "../../../utils/StringUtils";
 
 interface Props {
     pokemon: Pokemon

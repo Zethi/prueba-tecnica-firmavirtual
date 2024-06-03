@@ -1,11 +1,11 @@
 'use client';
 
-import HomeHeaderSection from "@/components/sections/home/HomeHeaderSection";
-import HomePokemonListSection from "@/components/sections/home/HomePokemonListSection";
-import { useDependency } from "@/hooks/useDependency";
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
-import { IPokemonService } from "@/types/interfaces/services/IPokemonServices";
-import { addLeadingZeros } from "@/utils/StringUtils";
+import HomeHeaderSection from "../components/sections/home/HomeHeaderSection";
+import HomePokemonListSection from "../components/sections/home/HomePokemonListSection";
+import { useDependency } from "../hooks/useDependency";
+import { Pokemon } from "../types/interfaces/backend/pokemon/Pokemon";
+import { IPokemonService } from "../types/interfaces/services/IPokemonServices";
+import { addLeadingZeros } from "../utils/StringUtils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

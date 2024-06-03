@@ -1,5 +1,5 @@
-import { PokemonService } from "@/services/backend/v1/PokemonService";
-import { IPokemonService } from "@/types/interfaces/services/IPokemonServices";
+import { PokemonService } from "../services/backend/v1/PokemonService";
+import { IPokemonService } from "../types/interfaces/services/IPokemonServices";
 
 type Constructor<T> = new (...args: any[]) => T;
 

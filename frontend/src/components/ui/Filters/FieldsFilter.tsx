@@ -1,6 +1,6 @@
-import { FieldTypesEnum } from "@/types/enums/backend/filters/FieldTypesEnum";
-import { OrderByEnum } from "@/types/enums/backend/filters/OrderByEnum";
-import { Filters } from "@/types/interfaces/backend/filters/PokemonFilters";
+import { FieldTypesEnum } from "../../../types/enums/backend/filters/FieldTypesEnum";
+import { OrderByEnum } from "../../../types/enums/backend/filters/OrderByEnum";
+import { Filters } from "../../../types/interfaces/backend/filters/PokemonFilters";
 
 interface Props {
     filters: Filters;

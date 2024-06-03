@@ -1,7 +1,7 @@
 import Image from "next/image";
-import PokemonInfoSection from "@/components/sections/pokemon/PokemonInfoSection";
-import { PokemonService } from "@/services/backend/v1/PokemonService";
-import { addLeadingZeros } from "@/utils/StringUtils";
+import PokemonInfoSection from "../../../components/sections/pokemon/PokemonInfoSection";
+import { PokemonService } from "../../../services/backend/v1/PokemonService";
+import { addLeadingZeros } from "../../../utils/StringUtils";
 import { redirect } from "next/navigation";
 
 interface Props {
@@ -16,7 +16,7 @@ export default async function Pokemon({ params }: Props) {
     } catch (exception) {
         redirect('/')
     }
-    
+
     return (
         <main className="h-full">
 

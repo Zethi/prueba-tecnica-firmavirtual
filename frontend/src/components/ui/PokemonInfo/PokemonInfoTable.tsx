@@ -1,7 +1,7 @@
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
 import PokemonInfoTableDataCell from "./PokemonInfoTableDataCell";
 import PokemonType from "../PokemonType/PokemonType";
-import { TypeSlot } from "@/types/interfaces/backend/pokemon/TypeSlot";
+import { TypeSlot } from "../../../types/interfaces/backend/pokemon/TypeSlot";
 
 interface Props {
     pokemon: Pokemon

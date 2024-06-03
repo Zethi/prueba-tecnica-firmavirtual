@@ -1,4 +1,4 @@
-import { TypeEnum } from "@/types/enums/backend/pokemon/TypeEnum";
+import { TypeEnum } from "../../../../types/enums/backend/pokemon/TypeEnum";
 
 export interface Move {
   name: string;

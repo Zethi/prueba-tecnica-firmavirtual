@@ -1,9 +1,9 @@
-import { Filters } from "@/types/interfaces/backend/filters/PokemonFilters";
-import { SortField } from "@/types/interfaces/backend/filters/SortField";
-import { StatFilter } from "@/types/interfaces/backend/filters/SortStat";
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
-import { IPokemonService } from "@/types/interfaces/services/IPokemonServices";
-import { capitalizeFirstLetter } from "@/utils/StringUtils";
+import { Filters } from "../../../types/interfaces/backend/filters/PokemonFilters";
+import { SortField } from "../../../types/interfaces/backend/filters/SortField";
+import { StatFilter } from "../../../types/interfaces/backend/filters/SortStat";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
+import { IPokemonService } from "../../../types/interfaces/services/IPokemonServices";
+import { capitalizeFirstLetter } from "../../../utils/StringUtils";
 import axios from "axios";
 
 export class PokemonService implements IPokemonService {

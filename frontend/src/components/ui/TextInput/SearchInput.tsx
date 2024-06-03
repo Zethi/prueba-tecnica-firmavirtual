@@ -1,4 +1,4 @@
-import { Filters } from '@/types/interfaces/backend/filters/PokemonFilters';
+import { Filters } from '../../../types/interfaces/backend/filters/PokemonFilters';
 import { useState } from 'react';
 
 interface Props {

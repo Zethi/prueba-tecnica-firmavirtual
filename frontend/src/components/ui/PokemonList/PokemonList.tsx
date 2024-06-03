@@ -1,4 +1,4 @@
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
 import PokemonListElement from "./PokemonListElement";
 
 interface Props {

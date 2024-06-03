@@ -1,6 +1,6 @@
-import { Move } from "@/types/interfaces/backend/pokemon/Move";
+import { Move } from "../../../types/interfaces/backend/pokemon/Move";
 import PokemonType from "../PokemonType/PokemonType";
-import { PokemonTypeColorsDictionary } from "@/types/dictionarys/PokemonTypeColorsDictionary";
+import { PokemonTypeColorsDictionary } from "../../../types/dictionarys/PokemonTypeColorsDictionary";
 
 interface Props {
     move: Move;

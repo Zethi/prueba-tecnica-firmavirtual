@@ -1,5 +1,5 @@
-import { TypeEnum } from "@/types/enums/backend/pokemon/TypeEnum";
-import { Filters } from "@/types/interfaces/backend/filters/PokemonFilters";
+import { TypeEnum } from "../../../types/enums/backend/pokemon/TypeEnum";
+import { Filters } from "../../../types/interfaces/backend/filters/PokemonFilters";
 
 interface Props {
     filters: Filters;

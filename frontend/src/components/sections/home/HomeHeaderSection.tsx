@@ -1,5 +1,5 @@
-import Loader from "@/components/ui/utils/Loader";
-import { Pokemon } from "@/types/interfaces/backend/pokemon/Pokemon";
+import Loader from "../../../components/ui/utils/Loader";
+import { Pokemon } from "../../../types/interfaces/backend/pokemon/Pokemon";
 import Image from "next/image";
 import HomeHeaderFilterSection from "./HomeHeaderFIlterSection";
 
