@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --orange-strong: #cc0000;
+  --black-strong: #000000;
+  --black-weak: rgba(0, 0, 0, 0.705);
+  --gray-smooth: #dcdbda;
+  --white-strong: #ffffff;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--black-weak) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--black-weak);
+    border-radius: 5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--black-strong);
+  }
+}
+
+html {
+  color-scheme: only light;
+}
+
+.test {
+  background: url("/assets/background/background_4.png");
+  backdrop-filter: blur(5px);
+}
+
+/* #ffffff 40%, rgb(234 88 12) 50%, #000000 10% */
+
+.pokemon-list-element {
+  transition: background 0.3s ease;
+}
+
+.pokemon-list-element:hover {
+  opacity: 1;
+  background: linear-gradient(
+    120deg,
+    var(--orange-strong) 50%,
+    var(--black-strong) 50%
+  );
+}
