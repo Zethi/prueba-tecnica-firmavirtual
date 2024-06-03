@@ -17,3 +17,15 @@ services:
       - 3000:3000
     expose:
       - 3000
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - DB_HOST=database:3306
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend:/var/www
+    depends_on:
+      - database
