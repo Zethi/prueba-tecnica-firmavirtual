@@ -11,3 +11,9 @@ services:
       - 3306:3306
     expose:
       - 3306
+  frontend:
+    build: ./frontend
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
