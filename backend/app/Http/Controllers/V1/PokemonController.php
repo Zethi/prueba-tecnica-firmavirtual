@@ -23,9 +23,6 @@ class PokemonController extends Controller
         $sortableFields = ['name', 'game_id', 'weight', 'height', 'base_experience'];
         $validStatNames = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed'];
 
-
-        Log::info($request->getQueryString());
-
         // Order by Pokemon fields
 
         foreach ($sortableFields as $field) {
