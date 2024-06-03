@@ -4,8 +4,10 @@ namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pokemon\Pokemon;
+use App\Models\Pokemon\PokemonStat;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PokemonController extends Controller
 {
@@ -14,10 +16,7 @@ class PokemonController extends Controller
     {
         $query = Pokemon::query();
 
-        $query->with(['stats.stat']);
-        $query->with(['abilities.ability']);
-        $query->with(['moves.move']);
-        $query->with(['types.type']);
+        $query = Pokemon::with(['stats.stat', 'abilities.ability', 'moves.move.type', 'types.type']);
 
         // Filters
 
@@ -25,9 +24,9 @@ class PokemonController extends Controller
         $validStatNames = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed'];
 
 
-        if ($request->has('nameLike')) {
-            $query->where('name', 'like', '%' . $request->input('name') . '%');
-        }
+        Log::info($request->getQueryString());
+
+        // Order by Pokemon fields
 
         foreach ($sortableFields as $field) {
             if ($request->has('sortBy' . ucfirst($field)) && in_array($request->input('sortBy' . ucfirst($field)), ['asc', 'desc'])) {
@@ -36,53 +35,66 @@ class PokemonController extends Controller
             }
         }
 
-        if ($request->has('statName') && $request->has('statValue')) {
-            $statName = $request->input('statName');
-            $statValue = $request->input('statValue');
-            $query->whereHas('stats', function ($q) use ($statName, $statValue) {
-                $q->whereHas('stat', function ($q) use ($statName) {
-                    $q->where('name', $statName);
-                })->where('base', '>=', $statValue);
-            });
+        //Order by Name like
+
+        if ($request->has('nameLike')) {
+            $query->where('name', 'like', '%' . $request->input('nameLike') . '%');
         }
+
+
+        // Order by Types
 
         if ($request->has('type')) {
-            $type = $request->input('type');
-            $query->whereHas('types.type', function ($q) use ($type) {
-                $q->where('name', $type);
+            $types = $request->input('type');
+
+            if (is_string($types)) {
+                $types = explode(',', $types);
+            }
+            $query->whereHas('types.type', function ($q) use ($types) {
+                $q->whereIn('name', $types);
             });
         }
 
-        if ($request->has('sortStatName') && $request->has('sortStatOrder') && in_array($request->input('sortStatOrder'), ['asc', 'desc'])) {
-            $sortStatName = $request->input('sortStatName');
-            $sortStatOrder = $request->input('sortStatOrder');
 
-            if (!in_array($sortStatName, $validStatNames)) {
-                return response()->json(['error' => 'Invalid sortStatName provided. Valid values are: ' . implode(', ', $validStatNames)], 400);
+        // Order by stats
+
+        if ($request->has('stats')) {
+            $stats = $request->input('stats');
+            $statsArray = explode(',', $stats);
+
+            foreach ($statsArray as $statOrder) {
+                list($statName, $order) = explode(':', $statOrder);
+                if (!in_array($statName, $validStatNames)) {
+                    return response()->json(['error' => 'Invalid stat name provided. Valid values are: ' . implode(', ', $validStatNames)], 400);
+                }
+
+                if (in_array(strtolower($order), ['asc', 'desc'])) {
+                    $query->whereHas('stats.stat', function ($q) use ($statName) {
+                        $q->where('name', $statName);
+                    })->orderBy(
+                        PokemonStat::select('base')
+                            ->whereColumn('pokemon_id', 'pokemon.game_id')
+                            ->join('stats', 'stats.id', '=', 'pokemon_stats.stat_id')
+                            ->where('stats.name', $statName),
+                        $order
+                    );
+                }
             }
-
-            $query->whereHas('stats.stat', function ($q) use ($sortStatName) {
-                $q->where('name', $sortStatName);
-            })->orderBy(function ($q) use ($sortStatName) {
-                $q->select('base')
-                    ->from('pokemon_stats')
-                    ->join('stats', 'pokemon_stats.stat_id', '=', 'stats.id')
-                    ->whereColumn('pokemon_stats.pokemon_id', 'pokemons.id')
-                    ->where('stats.name', $sortStatName);
-            }, $sortStatOrder);
         }
+
+        $paginationLimit = $request->input('limit', 10);
 
         // End Filters
 
-        $paginationLimit = $request->input('limit', 10);
         $pokemons = $query->paginate($paginationLimit);
 
         return response()->json($pokemons, 200);
     }
 
+
     public function getPokemonByIdentifier(Request $request, $identifier): JsonResponse
     {
-        $query = Pokemon::with(['stats.stat', 'abilities.ability', 'moves.move', 'types.type']);
+        $query = Pokemon::with(['stats.stat', 'abilities.ability', 'moves.move.type', 'types.type']);
 
         if (is_numeric($identifier)) {
             $pokemon = $query->find($identifier);

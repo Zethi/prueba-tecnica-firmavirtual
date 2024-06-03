@@ -22,12 +22,12 @@ class Move extends Model
         'type_id'
     ];
 
-    public function DamageClass(): BelongsTo
+    public function damageClass(): BelongsTo
     {
         return $this->belongsTo(DamageClass::class, 'damage_class_id');
     }
 
-    public function TypeClass(): BelongsTo
+    public function type(): BelongsTo
     {
         return $this->belongsTo(Type::class, 'type_id');
     }
