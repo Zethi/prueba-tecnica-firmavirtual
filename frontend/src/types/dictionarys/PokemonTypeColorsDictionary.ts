@@ -1,0 +1,25 @@
+import { TypeEnum } from "../enums/backend/pokemon/TypeEnum";
+
+export const PokemonTypeColorsDictionary: { [key in TypeEnum]: string } = {
+  [TypeEnum.NORMAL]: "#A8A878",
+  [TypeEnum.FIGHTING]: "#C03028",
+  [TypeEnum.FLYING]: "#A890F0",
+  [TypeEnum.POISON]: "#A040A0",
+  [TypeEnum.GROUND]: "#E0C068",
+  [TypeEnum.ROCK]: "#B8A038",
+  [TypeEnum.BUG]: "#A8B820",
+  [TypeEnum.GHOST]: "#705898",
+  [TypeEnum.STEEL]: "#B8B8D0",
+  [TypeEnum.FIRE]: "#F08030",
+  [TypeEnum.WATER]: "#6890F0",
+  [TypeEnum.GRASS]: "#78C850",
+  [TypeEnum.ELECTRIC]: "#F8D030",
+  [TypeEnum.PSYCHIC]: "#F85888",
+  [TypeEnum.ICE]: "#98D8D8",
+  [TypeEnum.DRAGON]: "#7038F8",
+  [TypeEnum.DARK]: "#705848",
+  [TypeEnum.FAIRY]: "#EE99AC",
+  [TypeEnum.STELLAR]: "#A8A878",
+  [TypeEnum.UNKNOWN]: "#68A090",
+  [TypeEnum.SHADOW]: "#705898",
+};
