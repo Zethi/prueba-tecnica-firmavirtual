@@ -7,7 +7,8 @@ import { capitalizeFirstLetter } from "../../../utils/StringUtils";
 import axios from "axios";
 
 export class PokemonService implements IPokemonService {
-  private BACKEND_URL = process.env.BACKEND_URL ?? "http://127.0.0.1:8000/api";
+  private BACKEND_URL =
+    process.env.BACKEND_URL ?? process.env.NEXT_PUBLIC_BACKEND_URL;
 
   async getAll(filters: Filters): Promise<Pokemon[]> {
     const params = new URLSearchParams();
